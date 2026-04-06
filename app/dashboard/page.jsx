@@ -49,26 +49,26 @@ function Page() {
             <h1 className="text-white font-bold tracking-wider">Monday</h1>
           </div>
           <div className=" shadow-sm rounded-md pb-1 space-y-4 mb-8 mt-6">
-            <div className="grid grid-cols-4 bg-blue-90 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
+            <div className="grid grid-cols-4 bg-blue-90 px-2 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
               <p>juz</p>
               <p>tambeeh</p>
               <p>talqeen</p>
               <p>marks</p>
             </div>
-            <div className="space-y-3 bg-blue-80">
-              <div className="grid grid-cols-4">
+            <div className="space-y-3 px-2">
+              <div className="grid grid-cols-4 border-b border-gray-200 pb-2">
                 <p>3</p>
                 <p>4</p>
                 <p>4</p>
                 <p>7</p>
               </div>
-              <div className="grid grid-cols-4">
+              <div className="grid grid-cols-4 border-b border-gray-200 pb-2">
                 <p>9</p>
                 <p>2</p>
                 <p>3</p>
                 <p>8</p>
               </div>
-              <div className="grid grid-cols-4">
+              <div className="grid grid-cols-4 border-b border-gray-200 pb-2">
                 <p>14</p>
                 <p>6</p>
                 <p>1</p>
