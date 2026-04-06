@@ -1,0 +1,115 @@
+"use client";
+import axios from "axios";
+import { navigate } from "next/dist/client/components/segment-cache/navigation";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import OtpInput from "react-otp-input";
+
+function SignInForm() {
+  const [isOtp,setIsOtp] = useState(false);
+  const [email,setEmail] = useState('');
+  async function getOtp(e){
+    e.preventDefault();
+    try{
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/auth/signin`,{email});
+      console.log(res);
+      if(res.data?.ok) setIsOtp(true);
+    }catch(err){
+      console.log(err);
+    }
+    // setIsOtp({otp:'123456'});
+  }
+  if(!isOtp) return <form className="flex flex-col gap-4" onSubmit={getOtp}>
+    <div>
+      <label className="mb-1 block text-sm font-medium text-gray-700">
+        Email
+      </label>
+      <input
+        onChange={(el) => setEmail(el.target.value)}
+        type="email"
+        placeholder="Enter your email"
+        className="w-full rounded-lg border px-4 py-2 outline-none focus:border-black"
+        required
+      />
+    </div>
+
+    <button
+      type="submit"
+      className="mt-4 rounded-lg bg-black py-2 text-white transition hover:bg-gray-800"
+    >
+      Continue
+    </button>
+  </form>;
+  if(isOtp) return <OTP  email={email}/>;
+}
+
+export default SignInForm;
+
+function OTP({email}) {
+  const [otp, setOtp] = useState("");
+  const router = useRouter();
+  async function verifyOtp(){
+    try{
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/auth/verifyOtp`,{otp,email});
+      if(res.data?.token) {
+        localStorage.setItem('jwt',res.data.token);
+        router.push('/dashboard');
+      }
+    }catch(err){
+      console.log(err);
+    }
+  }
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
+      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
+        <h1 className="text-2xl font-semibold text-center mb-2">
+          Verify Email
+        </h1>
+
+        <p className="text-sm text-gray-500 text-center mb-6">
+          Enter the 6-digit code sent to your email
+        </p>
+
+        <OtpInput
+          value={otp}
+          onChange={setOtp}
+          numInputs={6}
+          renderInput={(props) => (
+            <input
+              {...props}
+              className="
+                min-w-[15%] h-14
+                border border-gray-300
+                rounded-xl
+                text-center text-lg font-semibold
+                transition
+                focus:outline-none
+                focus:border-black
+                focus:ring-2 focus:ring-black/20
+              "
+            />
+          )}
+          containerStyle="gap-2"
+        />
+
+        <button
+        onClick={verifyOtp}
+          className="
+            mt-6 w-full
+            bg-black text-white
+            py-2.5 rounded-xl
+            font-medium
+            transition hover:bg-gray-800
+          "
+        >
+          Verify
+        </button>
+
+        <p className="text-xs text-center text-gray-500 mt-4">
+          Didn’t receive code?{" "}
+          <span className="underline cursor-pointer">Resend</span>
+        </p>
+      </div>
+    </div>
+  );
+}
