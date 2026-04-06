@@ -124,23 +124,6 @@ function Page() {
                 <p>4</p>
                 <p>4</p>
                 <p>7</p>
-              </div>
-            </div>
-          </div>
-
-          {/* <div className=" bg-blue-500 w-fit mx-auto px-8 py-1 rounded-tl-full rounded-br-full">
-            <h1 className="text-white font-bold tracking-wider">Tuesday</h1>
-          </div> */}
-          <div className=" shadow-sm rounded-md pb-1 space-y-4 mb-8 mt-6">
-            <div className="grid grid-cols-5 bg-blue-90 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
-              <p>day</p>
-              <p>juz</p>
-              <p>tambeeh</p>
-              <p>talqeen</p>
-              <p>marks</p>
-            </div>
-            <div className="space-y-3 bg-blue-80">
-              <div className="grid grid-cols-5">
                 <p>Tue</p>
                 <p>al-Qalam</p>
                 <p>4</p>
