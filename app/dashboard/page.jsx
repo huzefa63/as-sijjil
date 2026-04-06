@@ -39,7 +39,7 @@ function Page() {
       </div>
       {/*  murajaat */}
       <div className="mt-5 font-semibold shadow-sm border border-gray-200 rounded-md bg-[#FBFBFB] p-3 w-full  ">
-        <header className="border-b pb-5 border-gray-300 text-3xl font-bold text-black text-center my-5 flex items-center gap-3 justify-center">
+        <header className="border-b pb-5 border-gray-300 text-2xl font-bold text-black text-center my-5 flex items-center gap-3 justify-center">
           <FaPenAlt /> Muraja&apos;ah This Week
         </header>
         {/* <p className={`${inter.className} tracking-wider`}>March 24, 2026</p> */}
@@ -100,15 +100,15 @@ function Page() {
       {/* juzhaali */}
 
       <div className="mt-5 font-semibold shadow-sm border border-gray-200 rounded-md bg-[#FBFBFB] p-3 w-full  ">
-        <header className="border-b pb-5 border-gray-300 text-3xl font-bold text-black text-center my-5 flex items-center gap-3 justify-center">
+        <header className="border-b pb-5 border-gray-300 text-2xl font-bold text-black text-center my-5 flex items-center gap-3 justify-center">
           <FaPenAlt /> Juzhaali This Week
         </header>
         {/* <p className={`${inter.className} tracking-wider`}>March 24, 2026</p> */}
         <div className="space-y-3 text-center">
           {/* <h1 className="text-center text-gray-800 opacity-90">This week</h1> */}
-          <div className="bg-blue-500 w-fit mx-auto px-8 py-1 rounded-tl-full rounded-br-full">
+          {/* <div className="bg-blue-500 w-fit mx-auto px-8 py-1 rounded-tl-full rounded-br-full">
             <h1 className="text-white font-bold tracking-wider">Monday</h1>
-          </div>
+          </div> */}
           <div className=" shadow-sm rounded-md pb-1 space-y-4 mb-8 mt-6">
             <div className="grid grid-cols-5 bg-blue-90 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
               <p>day</p>
@@ -128,21 +128,25 @@ function Page() {
             </div>
           </div>
 
-          <div className=" bg-blue-500 w-fit mx-auto px-8 py-1 rounded-tl-full rounded-br-full">
+          {/* <div className=" bg-blue-500 w-fit mx-auto px-8 py-1 rounded-tl-full rounded-br-full">
             <h1 className="text-white font-bold tracking-wider">Tuesday</h1>
-          </div>
-          <div className=" shadow-sm rounded-md pb-1 space-y-4 text-black">
-            <div className="grid grid-cols-4 py-1 rounded-tl-md rounded-tr-md bg-gray-100 border border-gray-200 shadow-sm">
-              <p className="">surah</p>
+          </div> */}
+          <div className=" shadow-sm rounded-md pb-1 space-y-4 mb-8 mt-6">
+            <div className="grid grid-cols-5 bg-blue-90 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
+              <p>day</p>
+              <p>juz</p>
               <p>tambeeh</p>
               <p>talqeen</p>
               <p>marks</p>
             </div>
-            <div className="grid grid-cols-4">
-              <p className="px-1">al-Qalam</p>
-              <p>4</p>
-              <p>4</p>
-              <p className="font-bold">7</p>
+            <div className="space-y-3 bg-blue-80">
+              <div className="grid grid-cols-5">
+                <p>Tue</p>
+                <p>al-Qalam</p>
+                <p>4</p>
+                <p>4</p>
+                <p>7</p>
+              </div>
             </div>
           </div>
         </div>
@@ -151,7 +155,7 @@ function Page() {
       {/* tasmee */}
 
       <div className="mt-5 font-semibold shadow-sm border border-gray-200 rounded-md bg-[#FBFBFB] p-3 w-full  ">
-        <header className="border-b pb-5 border-gray-300 text-3xl font-bold text-black text-center my-5 flex items-center gap-3 justify-center">
+        <header className="border-b pb-5 border-gray-300 text-2xl font-bold text-black text-center my-5 flex items-center gap-3 justify-center">
           <FaPenAlt /> Tasmee This Week
         </header>
         {/* <p className={`${inter.className} tracking-wider`}>March 24, 2026</p> */}
