@@ -110,25 +110,74 @@ function Page() {
             <h1 className="text-white font-bold tracking-wider">Monday</h1>
           </div> */}
           <div className=" shadow-sm rounded-md pb-1 space-y-4 mb-8 mt-6">
-            <div className="grid grid-cols-5 bg-blue-90 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
-              <p>day</p>
-              <p>juz</p>
-              <p>tambeeh</p>
-              <p>talqeen</p>
-              <p>marks</p>
+            <div className="grid grid-cols-5 px-2 bg-blue-90 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
+              <p className="text-left">day</p>
+              <p className="text-left">juz</p>
+              <p className="">tambeeh</p>
+              <p className="">talqeen</p>
+              <p className="">marks</p>
             </div>
-            <div className="space-y-3 bg-blue-80">
-              <div className="grid grid-cols-5">
-                <p>Mon</p>
-                <p>3</p>
-                <p>4</p>
-                <p>4</p>
-                <p>7</p>
-                <p>Tue</p>
-                <p>al-Qalam</p>
-                <p>4</p>
-                <p>4</p>
-                <p>7</p>
+            <div className="bg-blue-80">
+              <div className="px-2 space-y-3">
+                <div className="grid grid-cols-5 border-b border-gray-200 pb-2">
+                  <div className="ml-">
+                    <p className="text-left overflow-hidden">Mon</p>
+                  </div>
+                  <p className="text-left">3</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">7</p>
+                </div>
+
+                <div className="grid grid-cols-5 border-b border-gray-200 pb-2">
+                  <div className="ml-">
+                    <p className="text-left overflow-hidden">Tue</p>
+                  </div>
+                  <p className="text-left">3</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">7</p>
+                </div>
+
+                <div className="grid grid-cols-5 border-b border-gray-200 pb-2">
+                  <div className="ml-">
+                    <p className="text-left overflow-hidden">Wed</p>
+                  </div>
+                  <p className="text-left">3</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">7</p>
+                </div>
+
+                <div className="grid grid-cols-5 border-b border-gray-200 pb-2">
+                  <div className="ml-">
+                    <p className="text-left overflow-hidden">Thur</p>
+                  </div>
+                  <p className="text-left">3</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">7</p>
+                </div>
+
+                <div className="grid grid-cols-5 border-b border-gray-200 pb-2">
+                  <div className="ml-">
+                    <p className="text-left overflow-hidden">Fri</p>
+                  </div>
+                  <p className="text-left">3</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">7</p>
+                </div>
+
+                <div className="grid grid-cols-5 pb-2">
+                  <div className="ml-">
+                    <p className="text-left overflow-hidden">Sat</p>
+                  </div>
+                  <p className="text-left">3</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">4</p>
+                  <p className="text-center">7</p>
+                </div>
               </div>
             </div>
           </div>
