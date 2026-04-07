@@ -45,53 +45,142 @@ function Page() {
         {/* <p className={`${inter.className} tracking-wider`}>March 24, 2026</p> */}
         <div className="space-y-3 text-center">
           {/* <h1 className="text-center text-gray-800 opacity-90">This week</h1> */}
-          <div className="bg-blue-500 w-fit mx-auto px-8 py-1 rounded-tl-full rounded-br-full">
-            <h1 className="text-white font-bold tracking-wider">Monday</h1>
-          </div>
           <div className=" shadow-sm rounded-md pb-1 space-y-4 mb-8 mt-6">
-            <div className="grid grid-cols-4 bg-blue-90 px-2 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
+            <div className="grid grid-cols-5 bg-blue-90 px-2 py-1 rounded-md border border-gray-200 bg-gray-100 shadow-sm">
+              <p>Day</p>
               <p>juz</p>
               <p>tambeeh</p>
               <p>talqeen</p>
               <p>marks</p>
             </div>
             <div className="space-y-3 px-2">
-              <div className="grid grid-cols-4 border-b border-gray-200 pb-2">
-                <p>3</p>
-                <p>4</p>
-                <p>4</p>
-                <p>7</p>
+              <div className="grid grid-cols-5 border-b border-gray-900 pb-2">
+                <p className="mt-1 font-bold">Mon</p>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">3</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-blue-500 font-bold">7</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">9</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">6</p>
+                  <p className="text-red-500 font-bold">6</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">15</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-green-500 font-bold">9</p>
+                </div>
               </div>
-              <div className="grid grid-cols-4 border-b border-gray-200 pb-2">
-                <p>9</p>
-                <p>2</p>
-                <p>3</p>
-                <p>8</p>
+              <div className="grid grid-cols-5 border-b border-gray-900 pb-2">
+                <p className="mt-1 font-bold">Tue</p>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">3</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-blue-500 font-bold">7</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">9</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">6</p>
+                  <p className="text-red-500 font-bold">6</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">15</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-green-500 font-bold">9</p>
+                </div>
               </div>
-              <div className="grid grid-cols-4 border-b border-gray-200 pb-2">
-                <p>14</p>
-                <p>6</p>
-                <p>1</p>
-                <p>8</p>
+              <div className="grid grid-cols-5 border-b border-gray-900 pb-2">
+                <p className="mt-1 font-bold">Wed</p>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">3</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-blue-500 font-bold">7</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">9</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">6</p>
+                  <p className="text-red-500 font-bold">6</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">15</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-green-500 font-bold">9</p>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div className=" bg-blue-500 w-fit mx-auto px-8 py-1 rounded-tl-full rounded-br-full">
-            <h1 className="text-white font-bold tracking-wider">Tuesday</h1>
-          </div>
-          <div className="bg-gray-100 shadow-sm rounded-md pb-1 space-y-4 text-black">
-            <div className="grid grid-cols-4 py-1 rounded-tl-md rounded-tr-md border border-gray-200 shadow-sm">
-              <p className="">surah</p>
-              <p>tambeeh</p>
-              <p>talqeen</p>
-              <p>marks</p>
-            </div>
-            <div className="grid grid-cols-4">
-              <p className="px-1">al-mumtahanah</p>
-              <p>4</p>
-              <p>4</p>
-              <p className="font-bold">7</p>
+              <div className="grid grid-cols-5 border-b border-gray-900 pb-2">
+                <p className="mt-1 font-bold">Thur</p>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">3</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-blue-500 font-bold">7</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">9</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">6</p>
+                  <p className="text-red-500 font-bold">6</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">15</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-green-500 font-bold">9</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-5 border-b border-gray-900 pb-2">
+                <p className="mt-1 font-bold">Fri</p>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">3</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-blue-500 font-bold">7</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">9</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">6</p>
+                  <p className="text-red-500 font-bold">6</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">15</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-green-500 font-bold">9</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-5 border-b border-gray-900 pb-2">
+                <p className="mt-1 font-bold">Sat</p>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">3</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-gray-600 text-xs ">4</p>
+                  <p className="text-blue-500 font-bold">7</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">9</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">6</p>
+                  <p className="text-red-500 font-bold">6</p>
+                </div>
+                <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
+                  <p className="font-bold text-amber-950">15</p>
+                  <p className="text-gray-600 text-xs ">2</p>
+                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-green-500 font-bold">9</p>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
