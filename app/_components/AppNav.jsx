@@ -14,7 +14,7 @@ function AppNav() {
   const [showNav, setShowNav] = useState(false);
 
   return (
-    <div className="relative h-28 px-5 bg-white/70 backdrop-blur-md border-b border-gray-200 flex items-center justify-between">
+    <div className="relative min-h-16 px-5 bg-white/70 backdrop-blur-md border-b border-gray-200 flex items-center justify-between">
       {/* Left Icon */}
       <button
         onClick={() => setShowNav((prev) => !prev)}
