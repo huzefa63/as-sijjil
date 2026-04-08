@@ -57,10 +57,14 @@ function Page() {
               <div className="grid grid-cols-5 border-b border-gray-900 pb-2">
                 <p className="mt-1 font-bold">Mon</p>
                 <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
-                  <p className="font-bold text-amber-950">3</p>
-                  <p className="text-gray-600 text-xs ">4</p>
-                  <p className="text-gray-600 text-xs ">4</p>
-                  <p className="text-blue-500 font-bold">7</p>
+                  <p className="font-bold text-amber-950 flex justify-center items-center">
+                    3
+                  </p>
+                  <p className="text-gray-600 text-xs flex justify-center items-center">
+                    4
+                  </p>
+                  <p className="text-gray-600 text-xs flex justify-center items-center">4</p>
+                  <p className="text-blue-500 font-bold flex justify-center items-center">7</p>
                 </div>
                 <div className="grid grid-cols-4 col-span-4 col-start-2 border-b border-gray-300 pb-2 mt-1">
                   <p className="font-bold text-amber-950">9</p>
@@ -71,7 +75,7 @@ function Page() {
                 <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
                   <p className="font-bold text-amber-950">15</p>
                   <p className="text-gray-600 text-xs ">2</p>
-                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-gray-600 text-xs ">0</p>
                   <p className="text-green-500 font-bold">9</p>
                 </div>
               </div>
@@ -92,7 +96,7 @@ function Page() {
                 <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
                   <p className="font-bold text-amber-950">15</p>
                   <p className="text-gray-600 text-xs ">2</p>
-                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-gray-600 text-xs ">0</p>
                   <p className="text-green-500 font-bold">9</p>
                 </div>
               </div>
@@ -113,7 +117,7 @@ function Page() {
                 <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
                   <p className="font-bold text-amber-950">15</p>
                   <p className="text-gray-600 text-xs ">2</p>
-                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-gray-600 text-xs ">0</p>
                   <p className="text-green-500 font-bold">9</p>
                 </div>
               </div>
@@ -134,7 +138,7 @@ function Page() {
                 <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
                   <p className="font-bold text-amber-950">15</p>
                   <p className="text-gray-600 text-xs ">2</p>
-                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-gray-600 text-xs ">0</p>
                   <p className="text-green-500 font-bold">9</p>
                 </div>
               </div>
@@ -155,7 +159,7 @@ function Page() {
                 <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
                   <p className="font-bold text-amber-950">15</p>
                   <p className="text-gray-600 text-xs ">2</p>
-                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-gray-600 text-xs ">0</p>
                   <p className="text-green-500 font-bold">9</p>
                 </div>
               </div>
@@ -176,11 +180,10 @@ function Page() {
                 <div className="grid grid-cols-4 col-span-4 col-start-2 pb-2 mt-1">
                   <p className="font-bold text-amber-950">15</p>
                   <p className="text-gray-600 text-xs ">2</p>
-                  <p className="text-gray-600 text-xs ">0</p> 
+                  <p className="text-gray-600 text-xs ">0</p>
                   <p className="text-green-500 font-bold">9</p>
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
