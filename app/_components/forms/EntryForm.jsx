@@ -30,7 +30,7 @@ function EntryForm({formHeading,inputFields,submitHandler}) {
                       type={el.type}
                       required={el.required}
                       name={el.name}
-                      className="bg-(--background) shadow-sm focus:outline-none focus:border-2 focus:border-amber-300 transition-all duration-500 ease-in-out border-2 border-amber-300 rounded-sm px-2 py-1 w-full"
+                      className="bg-(--background) shadow-sm focus:outline-none focus:border-amber-500 transition-all duration-500 ease-in-out border border-amber-300 rounded-sm px-2 py-1 w-full"
                     />
                   )}
                   {el.type === "select" && (
@@ -40,7 +40,7 @@ function EntryForm({formHeading,inputFields,submitHandler}) {
                       })}
                       required={el.required}
                       name={el.name}
-                      className="bg-(--background) shadow-sm focus:outline-none focus:border-2 focus:border-amber-300 transition-all duration-500 ease-in-out border-2 border-amber-300 rounded-sm px-2 py-1 w-full"
+                      className="bg-(--background) shadow-sm focus:outline-none focus:border-amber-500 transition-all duration-500 ease-in-out border border-amber-300 rounded-sm px-2 py-1 w-full"
                     >
                       {el.options.map((el, i) => (
                         <option key={el} value={el}>
