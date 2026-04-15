@@ -17,14 +17,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${poppins.className}  h-full antialiased`}
-    >
-      <body className="h-full flex flex-col text-sm bg-gray-100">
+    <html lang="en" className={`${poppins.className}  h-full antialiased`}>
+      <body className="h-full flex flex-col text-sm bg-[#f0d8a1ab]">
         <AppNav />
         {children}
       </body>
     </html>
   );
 }
+// F0D8A1;

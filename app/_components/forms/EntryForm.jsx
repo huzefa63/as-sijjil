@@ -6,7 +6,7 @@ function EntryForm({formHeading,inputFields,submitHandler}) {
     const {register,handleSubmit,formState:{errors}} = useForm();
     return (
       <form
-        className="w-full shadow-sm rounded-md border border-gray-200 pt-4 pb-8 px-5 bg-[#f5f5f5]"
+        className="bg-(--layer) w-full shadow-sm rounded-md border border-(--highlightBorder) pt-4 pb-8 px-5"
         onSubmit={handleSubmit(submitHandler)}
       >
         <header className="font-semibold text-xl tracking-wide text-center">
@@ -30,7 +30,7 @@ function EntryForm({formHeading,inputFields,submitHandler}) {
                       type={el.type}
                       required={el.required}
                       name={el.name}
-                      className="bg-gray-100 shadow-sm focus:outline-none focus:border-2 focus:border-blue-500 transition-all duration-500 ease-in-out border-2 border-gray-200 rounded-sm px-2 py-1 w-full"
+                      className="bg-(--background) shadow-sm focus:outline-none focus:border-2 focus:border-amber-300 transition-all duration-500 ease-in-out border-2 border-(--border) rounded-sm px-2 py-1 w-full"
                     />
                   )}
                   {el.type === "select" && (
@@ -40,7 +40,7 @@ function EntryForm({formHeading,inputFields,submitHandler}) {
                       })}
                       required={el.required}
                       name={el.name}
-                      className="bg-gray-100 shadow-sm focus:outline-none focus:border-2 focus:border-blue-500 transition-all duration-500 ease-in-out border-2 border-gray-200 rounded-sm px-2 py-1 w-full"
+                      className="bg-(--background) shadow-sm focus:outline-none focus:border-2 focus:border-amber-300 transition-all duration-500 ease-in-out border-2 border-(--border) rounded-sm px-2 py-1 w-full"
                     >
                       {el.options.map((el, i) => (
                         <option key={el} value={el}>
@@ -54,7 +54,7 @@ function EntryForm({formHeading,inputFields,submitHandler}) {
             );
           })}
         </div>
-        <button className="mt-5 bg-blue-500 shadow-sm text-white px-2 py-2 rounded-sm text-xs tracking-wide ">
+        <button className="mt-5 bg-amber-800 hover:cursor-pointer hover:bg-amber-900 transition-all duration-300 ease-in-out shadow-sm text-white px-2 py-2 rounded-sm text-xs tracking-wide ">
         {/* <button className="mt-5 bg-[#A82323] text-white px-2 py-2 rounded-sm text-xs tracking-wide "> */}
           Submit
         </button>

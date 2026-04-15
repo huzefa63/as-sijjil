@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
 
-@layer base{
+@layer base {
   :root {
-    --greens:#295
+    --background:#f0d8a1ab;
+    --layer: #FFF1D3;
+    --highlight: #f0d8a1ab;
+    --highlightBorder: #ffd67d;
+    --border: #ffe5ac;
+
+    /* Added for consistency */
+    --text-muted: #8a6b2f;
+    --text-normal: #5c4520;
   }
 }
 

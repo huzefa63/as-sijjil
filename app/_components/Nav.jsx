@@ -7,7 +7,7 @@ function Nav({ close }) {
   return (
     <div
       className="absolute top-full left-0 w-full h-[94vh] 
-    bg-white/80 backdrop-blur-md z-50 
+    bg-(--layer)/80 backdrop-blur-md z-50 
     flex flex-col items-center justify-center gap-6 px-6"
     >
       <CustomLink title="Dashboard" href="/dashboard" close={close} />
@@ -36,8 +36,8 @@ function CustomLink({ title, href, close }) {
         
         ${
           isActive
-            ? "bg-black text-white shadow-md scale-100"
-            : "text-gray-700 hover:bg-black hover:text-white active:scale-95"
+            ? "bg-amber-800 text-white shadow-md scale-100"
+            : "text-gray-700 hover:bg-amber-600 hover:text-white active:scale-95"
         }
       `}
     >
