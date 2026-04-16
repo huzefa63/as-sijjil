@@ -186,7 +186,9 @@ function Page() {
         </div>
       </div>
       <div className="bg-(--layer) mt-10 rounded-md p-3">
-        <header className=" mb-8 text-center font-bold text-amber-800 text-xl">last 12 months avg marks</header>
+        <header className=" mb-8 text-center font-bold text-amber-800 text-xl">
+          last 12 months avg marks
+        </header>
         <LineChart
           style={{
             width: "100%",
@@ -205,10 +207,17 @@ function Page() {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="month" />
-          <YAxis width="auto" domain={[1,10]} interval={0}/>
+          <YAxis
+            width="auto"
+            domain={[1, 10]}
+            interval={0}
+            ticks={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+            style={{fontSize:'8px'}}
+          />
           <Tooltip />
           <Legend />
           <Line
+            label={{ position: "top", offset: 10, fontSize:'10px' }}
             type="monotone"
             dataKey="marks"
             stroke="#8884d8"
