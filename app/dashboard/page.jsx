@@ -1,9 +1,10 @@
 import { Cairo, Inter, Reem_Kufi } from "next/font/google";
 import { CiCalendarDate } from "react-icons/ci";
-import { FaPenAlt } from "react-icons/fa";
+import { FaChartBar, FaChartLine, FaPenAlt } from "react-icons/fa";
 import { GiOpenBook } from "react-icons/gi";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import BarChartCompo from "../_components/charts/BarChart";
+import LineChartCompo from "../_components/charts/LineChart";
 
 const inter = Inter({
   variable: "--font-geist-mono",
@@ -15,6 +16,90 @@ const reemKufi = Reem_Kufi({
   subsets: ["arabic"],
   weight: "600",
 });
+
+const data = [
+  {
+    month: "jan",
+    marks: 35,
+  },
+  {
+    month: "feb",
+    marks: 28,
+  },
+  {
+    month: "mar",
+    marks: 43,
+  },
+  {
+    month: "apr",
+    marks: 46,
+  },
+  {
+    month: "may",
+    marks: 14,
+  },
+  {
+    month: "jun",
+    marks: 29,
+  },
+  {
+    month: "jul",
+    marks: 32,
+  },
+  {
+    month: "aug",
+    marks: 40,
+  },
+  {
+    month: "sep",
+    marks: 50,
+  },
+  {
+    month: "oct",
+    marks: 48,
+  },
+  {
+    month: "nov",
+    marks: 44,
+  },
+  {
+    month: "dec",
+    marks: 41,
+  },
+];
+
+const barData = [
+  { juz: 1, marks: 7 },
+  { juz: 2, marks: 8 },
+  { juz: 3, marks: 6 },
+  { juz: 4, marks: 9 },
+  { juz: 5, marks: 5 },
+  { juz: 6, marks: 8 },
+  { juz: 7, marks: 7 },
+  { juz: 8, marks: 6 },
+  { juz: 9, marks: 9 },
+  { juz: 10, marks: 8 },
+  { juz: 11, marks: 7 },
+  { juz: 12, marks: 6 },
+  { juz: 13, marks: 8 },
+  { juz: 14, marks: 9 },
+  { juz: 15, marks: 7 },
+  { juz: 16, marks: 6 },
+  { juz: 17, marks: 8 },
+  { juz: 18, marks: 7 },
+  { juz: 19, marks: 9 },
+  { juz: 20, marks: 6 },
+  { juz: 21, marks: 8 },
+  { juz: 22, marks: 7 },
+  { juz: 23, marks: 6 },
+  { juz: 24, marks: 9 },
+  { juz: 25, marks: 8 },
+  { juz: 26, marks: 7 },
+  { juz: 27, marks: 9 },
+  { juz: 28, marks: 6 },
+  { juz: 29, marks: 8 },
+  { juz: 30, marks: 9 },
+];
 function Page() {
     
   return (
@@ -438,8 +523,17 @@ function Page() {
         </div>
       </div>
       <div className="w-full overflow-auto mt-5 bg-(--layer) p-3 rounded-md">
-        <header className="text-amber-800 text-center text-xl font-bold tracking-wider mb-3 border-b pb-3 border-(--highlightBorder)">all juz avg marks</header>
-        <BarChartCompo />
+        <header className="border-b pb-5 border-gray-300 font-bold text-amber-800 text-center my-5 flex items-center gap-3 justify-center">
+          <FaChartBar /> All juz avg marks from last 12 months
+        </header>
+        <BarChartCompo XAxisDataKey={'juz'} single={true} data={barData} ticks={[1,2,3,4,5,6,7,8,9,10]} dataKey={'marks'}/>
+      </div>
+
+      <div className="w-full overflow-auto mt-5 bg-(--layer) p-3 rounded-md">
+        <header className="border-b pb-5 border-gray-300 font-bold text-amber-800 text-center my-5 flex items-center gap-3 justify-center">
+          <FaChartLine /> Jadeed each month from last 12 months
+        </header>
+        <LineChartCompo data={data} XAxisDataKey='month' ticks={false} />
       </div>
     </div>
   );

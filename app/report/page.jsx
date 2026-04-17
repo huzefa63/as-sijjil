@@ -1,14 +1,5 @@
-'use client'
-import {
-  LineChart,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  Line,
-} from "recharts";
-
+import BarChartCompo from "../_components/charts/BarChart";
+import LineChartCompo from "../_components/charts/LineChart";
 const data = [
   {
     month: "jan",
@@ -59,8 +50,21 @@ const data = [
     marks: 8,
   },
 ];
-const isAnimationActive = true;
 
+const barData = [
+  { month: "jan", passed: 3, failed: 1 },
+  { month: "feb", passed: 4, failed: 1 },
+  { month: "mar", passed: 2, failed: 2 },
+  { month: "apr", passed: 5, failed: 0 },
+  { month: "may", passed: 3, failed: 2 },
+  { month: "jun", passed: 4, failed: 0 },
+  { month: "jul", passed: 2, failed: 1 },
+  { month: "aug", passed: 3, failed: 1 },
+  { month: "sep", passed: 4, failed: 1 },
+  { month: "oct", passed: 5, failed: 0 },
+  { month: "nov", passed: 3, failed: 2 },
+  { month: "dec", passed: 4, failed: 0 },
+];
 function Page() {
   return (
     <div className="h-full py-3 px-3">
@@ -189,42 +193,17 @@ function Page() {
         <header className=" mb-8 text-center font-bold text-amber-800 text-xl">
           last 12 months avg marks
         </header>
-        <LineChart
-          style={{
-            width: "100%",
-            maxWidth: "700px",
-            maxHeight: "70vh",
-            aspectRatio: 1.618,
-          }}
-          responsive
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" />
-          <YAxis
-            width="auto"
-            domain={[1, 10]}
-            interval={0}
-            ticks={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-            style={{ fontSize: "8px" }}
-          />
-          <Tooltip />
-          <Legend />
-          <Line
-            label={{ position: "top", offset: 10, fontSize: "10px" }}
-            type="monotone"
-            dataKey="marks"
-            stroke="oklch(47.3% 0.137 46.201)"
-            isAnimationActive={isAnimationActive}
-          />
-        </LineChart>
+        <LineChartCompo data={data} XAxisDataKey={'month'} ticks={[1,2,3,4,5,6,7,8,9,10]}/>
       </div>
+
+      <div className="bg-(--layer) mt-10 rounded-md p-3">
+        <header className=" mb-8 text-center font-bold text-amber-800 text-xl">
+          last 12 months avg marks
+        </header>
+        <BarChartCompo XAxisDataKey={'month'} single={false} data={barData} dataKeys={['passed','failed']} ticks={false}/>
+      </div>
+
+      
     </div>
   );
 }
