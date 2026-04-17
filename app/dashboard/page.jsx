@@ -3,6 +3,7 @@ import { CiCalendarDate } from "react-icons/ci";
 import { FaPenAlt } from "react-icons/fa";
 import { GiOpenBook } from "react-icons/gi";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import BarChartCompo from "../_components/charts/BarChart";
 
 const inter = Inter({
   variable: "--font-geist-mono",
@@ -435,6 +436,10 @@ function Page() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full overflow-auto mt-5 bg-(--layer) p-3 rounded-md">
+        <header className="text-amber-800 text-center text-xl font-bold tracking-wider mb-3 border-b pb-3 border-(--highlightBorder)">all juz avg marks</header>
+        <BarChartCompo />
       </div>
     </div>
   );

@@ -67,19 +67,19 @@ function Page() {
       <div className="grid grid-cols-2 gap-3">
         <div className="flex flex-col items-center gap-y-3 bg-(--layer) w-full px-5 py-2 rounded-md shadow-sm border border-(--highlightBorder)">
           <p>Avg marks</p>
-          <h1 className="font-bold text-3xl">8.4</h1>
+          <h1 className="font-bold text-3xl text-amber-900">8.4</h1>
         </div>
         <div className="flex flex-col items-center gap-y-3 bg-(--layer) w-full px-5 py-2 rounded-md shadow-sm border border-(--highlightBorder)">
           <p>Times recited</p>
-          <h1 className="font-bold text-3xl">58</h1>
+          <h1 className="font-bold text-3xl text-amber-900">58</h1>
         </div>
         <div className="flex flex-col items-center gap-y-3 bg-(--layer) w-full px-5 py-2 rounded-md shadow-sm border border-(--highlightBorder)">
           <p>Times passed</p>
-          <h1 className="font-bold text-3xl">40</h1>
+          <h1 className="font-bold text-3xl text-amber-900">40</h1>
         </div>
         <div className="flex flex-col items-center gap-y-3 bg-(--layer) w-full px-5 py-2 rounded-md shadow-sm border border-(--highlightBorder)">
           <p>Times failed</p>
-          <h1 className="font-bold text-3xl">18</h1>
+          <h1 className="font-bold text-3xl text-amber-900">18</h1>
         </div>
       </div>
 
@@ -212,15 +212,15 @@ function Page() {
             domain={[1, 10]}
             interval={0}
             ticks={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-            style={{fontSize:'8px'}}
+            style={{ fontSize: "8px" }}
           />
           <Tooltip />
           <Legend />
           <Line
-            label={{ position: "top", offset: 10, fontSize:'10px' }}
+            label={{ position: "top", offset: 10, fontSize: "10px" }}
             type="monotone"
             dataKey="marks"
-            stroke="#8884d8"
+            stroke="oklch(47.3% 0.137 46.201)"
             isAnimationActive={isAnimationActive}
           />
         </LineChart>
