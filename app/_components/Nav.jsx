@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 function Nav({ close }) {
   return (
     <div
-      className="absolute top-full left-0 w-full h-[94vh] 
-    bg-(--layer)/80 backdrop-blur-md z-50 
+      className=" absolute top-full left-0 w-full h-[94vh] 
+    bg-(--layer)/80 backdrop-blur-md z-50
     flex flex-col items-center justify-center gap-6 px-6"
     >
       <CustomLink title="Dashboard" href="/dashboard" close={close} />

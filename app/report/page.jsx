@@ -1,5 +1,7 @@
+import { FaChartBar, FaChartLine } from "react-icons/fa";
 import BarChartCompo from "../_components/charts/BarChart";
 import LineChartCompo from "../_components/charts/LineChart";
+import SelectJuzButton from "../_components/report_page/SelectJuzButton";
 const data = [
   {
     month: "jan",
@@ -68,6 +70,9 @@ const barData = [
 function Page() {
   return (
     <div className="h-full py-3 px-3">
+      <div className="">
+        <SelectJuzButton />
+      </div>
       <div className="grid grid-cols-2 gap-3">
         <div className="flex flex-col items-center gap-y-3 bg-(--layer) w-full px-5 py-2 rounded-md shadow-sm border border-(--highlightBorder)">
           <p>Avg marks</p>
@@ -190,20 +195,28 @@ function Page() {
         </div>
       </div>
       <div className="bg-(--layer) mt-10 rounded-md p-3">
-        <header className=" mb-8 text-center font-bold text-amber-800 text-xl">
-          last 12 months avg marks
+        <header className="border-b pb-5 border-gray-300 font-bold text-amber-800 text-center my-5 flex items-center gap-3 justify-center">
+          <FaChartLine /> Last 12 months avg marks
         </header>
-        <LineChartCompo data={data} XAxisDataKey={'month'} ticks={[1,2,3,4,5,6,7,8,9,10]}/>
+        <LineChartCompo
+          data={data}
+          XAxisDataKey={"month"}
+          ticks={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+        />
       </div>
 
       <div className="bg-(--layer) mt-10 rounded-md p-3">
-        <header className=" mb-8 text-center font-bold text-amber-800 text-xl">
-          last 12 months avg marks
+        <header className="border-b pb-5 border-gray-300 font-bold text-amber-800 text-center my-5 flex items-center gap-3 justify-center">
+          <FaChartBar /> Passed and failed per month
         </header>
-        <BarChartCompo XAxisDataKey={'month'} single={false} data={barData} dataKeys={['passed','failed']} ticks={false}/>
+        <BarChartCompo
+          XAxisDataKey={"month"}
+          single={false}
+          data={barData}
+          dataKeys={["passed", "failed"]}
+          ticks={false}
+        />
       </div>
-
-      
     </div>
   );
 }

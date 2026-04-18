@@ -14,7 +14,7 @@ function AppNav() {
   const [showNav, setShowNav] = useState(false);
   
   return (
-    <div className="relative min-h-16 px-5 bg-(--layer) backdrop-blur-md border-b border-(--highlightBorder) flex items-center justify-between">
+    <div className="z-50 relative min-h-16 px-5 bg-(--layer) backdrop-blur-md border-b border-(--highlightBorder) flex items-center justify-between">
       {/* Left Icon */}
       <button
         onClick={() => setShowNav((prev) => !prev)}
@@ -37,7 +37,7 @@ function AppNav() {
 
       {/* Nav with animation */}
       <div
-        className={`absolute top-full left-0 w-full transition-all duration-300 ${
+        className={` absolute top-full left-0 w-full transition-all duration-300 ${
           showNav
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-5 pointer-events-none"
