@@ -5,6 +5,7 @@ import JuzAvgMarksLineChart from "../_components/report_page/charts/JuzAvgMarksL
 import JuzPassAndFailCompareBarChart from "../_components/report_page/charts/JuzPassAndFailCompareBarChart";
 import { cookies } from "next/headers";
 import StatsAndTableWrapper from "../_components/report_page/StatsAndTableWrapper";
+import { Suspense } from "react";
 
 async function Page() {
   // const cookieStore = await cookies();
@@ -17,13 +18,15 @@ async function Page() {
   // })
   return (
     <div className="h-full py-3 px-3">
-      <SelectJuzButton />
+      <Suspense>
+        <SelectJuzButton />
 
-      <StatsAndTableWrapper />
+        <StatsAndTableWrapper />
 
-      <JuzAvgMarksLineChart />
+        <JuzAvgMarksLineChart />
 
-      <JuzPassAndFailCompareBarChart />
+        <JuzPassAndFailCompareBarChart />
+      </Suspense>
     </div>
   );
 }

@@ -4,32 +4,35 @@ import JuzhaaliOverviewCard from "../_components/dashboard/JuzhaaliOverviewCard"
 import TasmeeOverviewCard from "../_components/dashboard/TasmeeOverviewCard";
 import MurajaahOverviewBarChart from "../_components/dashboard/charts/MurajaahOverviewBarChart";
 import JadeedOverviewLineChart from "../_components/dashboard/charts/JadeedOverviewLineChart";
+import { Suspense } from "react";
 
 function Page() {
     
   return (
     <div className="text-background py-5 px-3">
       {/* jadeed */}
-     <JadeedOverviewCard />
+      <Suspense>
+        <JadeedOverviewCard />
 
-      {/*  murajaat */}
-      <MurajaahOverviewCard />
+        {/*  murajaat */}
+        <MurajaahOverviewCard />
 
-      {/* juzhaali */}
+        {/* juzhaali */}
 
-      <JuzhaaliOverviewCard />
+        <JuzhaaliOverviewCard />
 
-      {/* tasmee */}
+        {/* tasmee */}
 
-      <TasmeeOverviewCard />
+        <TasmeeOverviewCard />
 
-      {/* murajaah overview chart */}
+        {/* murajaah overview chart */}
 
-      <MurajaahOverviewBarChart />
+        <MurajaahOverviewBarChart />
 
-      {/* jadeed average chart */}
+        {/* jadeed average chart */}
 
-      <JadeedOverviewLineChart />
+        <JadeedOverviewLineChart />
+      </Suspense>
     </div>
   );
 }
