@@ -21,6 +21,9 @@ function SignInForm() {
   }
   if(!isOtp) return (
     <form className="flex flex-col gap-4" onSubmit={getOtp}>
+      <h1 className="mb-6 text-center text-2xl font-semibold text-amber-800">
+        Sign In
+      </h1>
       <div>
         <label className=" mb-1 block text-sm font-medium text-gray-700">
           Email
@@ -62,8 +65,9 @@ function OTP({email}) {
     }
   }
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
-      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
+    <div className="flex items-center justify-center px-4">
+      
+      <div className="w-full max-w-md rounded-2xl p-8 ">
         <h1 className="text-2xl font-semibold text-center mb-2">
           Verify Email
         </h1>
@@ -98,7 +102,7 @@ function OTP({email}) {
         onClick={verifyOtp}
           className="
             mt-6 w-full
-            bg-black text-white
+            bg-amber-800 text-white
             py-2.5 rounded-xl
             font-medium
             transition hover:bg-gray-800
