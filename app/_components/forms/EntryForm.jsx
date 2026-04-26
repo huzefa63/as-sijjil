@@ -1,8 +1,9 @@
 'use client';
 
 import { useForm } from "react-hook-form";
+import { LuLoaderCircle } from "react-icons/lu";
 
-function EntryForm({formHeading,inputFields,submitHandler}) {
+function EntryForm({formHeading,inputFields,submitHandler,isSubmitting }) {
     const {register,handleSubmit,formState:{errors}} = useForm();
     return (
       <form
@@ -54,9 +55,10 @@ function EntryForm({formHeading,inputFields,submitHandler}) {
             );
           })}
         </div>
-        <button className="mt-5 bg-amber-800 hover:cursor-pointer hover:bg-amber-900 transition-all duration-300 ease-in-out shadow-sm text-white px-2 py-2 rounded-sm text-xs tracking-wide ">
-        {/* <button className="mt-5 bg-[#A82323] text-white px-2 py-2 rounded-sm text-xs tracking-wide "> */}
-          Submit
+        <button disabled={isSubmitting} className="relative mt-5 bg-amber-800 hover:cursor-pointer hover:bg-amber-900 transition-all duration-300 ease-in-out shadow-sm text-white px-2 py-2 rounded-sm text-xs tracking-wide ">
+          {/* <button className="mt-5 bg-[#A82323] text-white px-2 py-2 rounded-sm text-xs tracking-wide "> */}
+          <span className={`${isSubmitting && 'opacity-0'}`}>Submit</span>
+          <LuLoaderCircle className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-lg ${isSubmitting ? 'opacity-100':'opacity-0'} animate-spin`}/>
         </button>
       </form>
     );

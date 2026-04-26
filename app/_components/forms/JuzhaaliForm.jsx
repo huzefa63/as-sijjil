@@ -1,19 +1,21 @@
 "use client";
 
+import axios from "axios";
 import EntryForm from "./EntryForm";
+import toast from "react-hot-toast";
 
 function JuzhaaliForm() {
   const inputFields = [
     {
       heading: "Start (page/juz)",
       type: "number",
-      name: "start",
+      name: "startPage",
       required: true,
     },
     {
       heading: "End (page/juz)",
       type: "number",
-      name: "end",
+      name: "endPage",
       required: true,
     },
     {
@@ -42,17 +44,33 @@ function JuzhaaliForm() {
     },
   ];
 
-  function handleJuzhaaliSubmit(data) {
+  async function handleJuzhaaliSubmit(data) {
+    
     const cleanedData = {
       ...data,
-      start: Number(data.start),
-      end: Number(data.end),
+      startPage: Number(data.startPage),
+      endPage: Number(data.endPage),
       tambeeh: Number(data.tambeeh),
       talqeen: Number(data.talqeen),
       marks: Number(data.marks),
     };
-
-    console.log(cleanedData);
+    // console.log(cleanedData)
+    try{
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_URL}/entry/juzhaali`,
+        cleanedData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+          },
+        },
+      );
+      if(res.data.ok) {
+        toast.success('juzhaali entered');
+      }
+    }catch(err){
+      if(err.response.data.status === 'exists') return toast.error('juzhaali already entered on this date');
+    }
   }
 
   return (

@@ -1,17 +1,32 @@
 'use client';
 
-import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const juzList = [1,2,3,4,5,6,7,8,9];
 function SelectJuzButton() {
     const [isOpen,setIsOpen] = useState(false);
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const router = useRouter();
+
     function handleClick(e){
         if(!e.target.classList.contains('juz')) return;
         const juz = e.target.closest('button').dataset.juz;
         if(!juz) return;
-        alert(juz);
+        const urlSearchParams = new URLSearchParams(searchParams);
+        urlSearchParams.set('juz',juz);
+        urlSearchParams.set('page',1);
+        router.replace(`${pathname}?${urlSearchParams}`);
+        setIsOpen(false);
     }
+
+    useEffect(() => {
+      const url = new URLSearchParams(searchParams);
+      url.set('juz','1');
+      router.replace(`${pathname}?${url}`);
+    },[])
     return (
       <div className=" flex justify-center w-full mb-3 relative">
         <button
@@ -25,11 +40,11 @@ function SelectJuzButton() {
         </button>
 
         <div
-          className={`${isOpen ? "translate-y-12 opacity-100 pointer-events-auto" : " opacity-0 pointer-events-none"} transition-all duration-300 ease-in-out flex justify-center flex-wrap w-3/4 pb-10 gap-3 absolute bg-(--layer) shadow border border-(--border) p-3 top-0`}
+          className={`${isOpen ? "translate-y-12 opacity-100 pointer-events-auto" : " opacity-0 pointer-events-none"} transition-all duration-300 ease-in-out flex justify-center flex-wrap w-fullpb-10 gap-3 absolute bg-(--layer) shadow border border-(--border) p-3 top-0`}
           onClick={handleClick}
         >
-          {juzList.map((el) => (
-            <JuzCard key={el} juz={el} />
+          {Array.from({length:30}).map((el,i) => (
+            <JuzCard key={i+1} juz={i + 1} selectedJuz={searchParams.get('juz')}/>
           ))}
         </div>
       </div>
@@ -38,11 +53,27 @@ function SelectJuzButton() {
 
 export default SelectJuzButton
 
-function JuzCard({juz}){
-    return (
-      <button data-juz={juz} className="juz relative border w-[20%] rounded-md text-amber-900 text-shadow-2xs text-shadow-amber-400 font-bold  h-fit py-5 text-center bg-(--highlight) shadow border-(--highlightBorder)">
-        <div className="juz h-1 rounded-tl-md rounded-tr-md w-full absolute bg-amber-800 top-0"></div>
-        <p className="juz">{juz}</p>
-      </button>
-    );
+function JuzCard({ juz, selectedJuz }) {
+  const isSelected = juz == selectedJuz;
+// console.log('from juz',seletedJuz)
+  return (
+    <button
+      data-juz={juz}
+      className={`juz relative border w-[20%] rounded-md text-amber-900 
+      text-shadow-2xs text-shadow-amber-400 font-bold h-fit py-5 text-center 
+      shadow transition-all duration-200
+      ${
+        isSelected
+          ? "bg-amber-700 text-white border-amber-900 scale-105"
+          : "bg-(--highlight) border-(--highlightBorder)"
+      }`}
+    >
+      <div
+        className={`juz h-1 rounded-tl-md rounded-tr-md w-full absolute top-0 
+        ${isSelected ? "bg-amber-900" : "bg-amber-800"}`}
+      ></div>
+
+      <p className="juz">{juz}</p>
+    </button>
+  );
 }

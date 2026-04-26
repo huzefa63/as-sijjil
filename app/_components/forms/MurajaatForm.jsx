@@ -1,5 +1,6 @@
 "use client";
 
+import toast from "react-hot-toast";
 import EntryForm from "./EntryForm";
 import axios from "axios";
 
@@ -24,26 +25,29 @@ function MurajaatForm() {
   ];
 
   async function handleMurajaatSubmit(data) {
-    // try {
-    //   const cleanedData = {
-    //     ...data,
-    //     juz: Number(data.juz),
-    //     q1: Number(data.q1),
-    //     q2: Number(data.q2),
-    //     tambeeh: Number(data.tambeeh),
-    //     talqeen: Number(data.talqeen),
-    //     marks: Number(data.marks),
-    //   };
+    try {
+      const cleanedData = {
+        date:data.date,
+        juz: Number(data.juz),
+        que1: Number(data.q1),
+        que2: Number(data.q2),
+        tambeeh: Number(data.tambeeh),
+        talqeen: Number(data.talqeen),
+        marks: Number(data.marks),
+      };
 
-    //   const res = await axios.post(
-    //     "http://localhost:5000/murajaat",
-    //     cleanedData,
-    //   );
-
-    //   console.log(res.data);
-    // } catch (err) {
-    //   console.error(err);
-    // }
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_URL}/entry/murajaah`,
+        cleanedData,
+        {headers:{
+          Authorization:`Bearer ${localStorage.getItem('jwt')}`
+        }}
+      );
+      toast.success('murajaah entry updated');
+      
+    } catch (err) {
+      console.error(err);
+    }
     console.log(data);
   }
 

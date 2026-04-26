@@ -11,7 +11,7 @@ function SignInForm() {
   async function getOtp(e){
     e.preventDefault();
     try{
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/auth/signin`,{email});
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/email/sendSigninEmail`,{email});
       console.log(res);
       if(res.data?.ok) setIsOtp(true);
     }catch(err){
@@ -50,13 +50,13 @@ function OTP({email}) {
   const router = useRouter();
   async function verifyOtp(){
     try{
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/auth/verifyOtp`,{otp,email});
-      if(res.data?.token) {
-        localStorage.setItem('jwt',res.data.token);
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/auth/verifyOtp`,{otp,email},{withCredentials:true});
+      if(res.data?.jwt) {
+        localStorage.setItem('jwt',res.data.jwt);
         router.push('/dashboard');
       }
     }catch(err){
-      console.log(err);
+      console.log(err.response);
     }
   }
   return (

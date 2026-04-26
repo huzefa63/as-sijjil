@@ -12,7 +12,7 @@ import {
 
 
 // #endregion
-function LineChartCompo ({data,XAxisDataKey,ticks=[]}){
+function LineChartCompo ({data,XAxisDataKey,ticks=[],LineDataKey}){
   return(
     <LineChart
               style={{
@@ -50,7 +50,7 @@ function LineChartCompo ({data,XAxisDataKey,ticks=[]}){
               <Line
                 label={{ position: "top", offset: 10, fontSize: "10px" }}
                 type="monotone"
-                dataKey="marks"
+                dataKey={LineDataKey}
                 stroke="oklch(47.3% 0.137 46.201)"
                 isAnimationActive={true}
               />

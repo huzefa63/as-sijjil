@@ -1,6 +1,7 @@
 'use client';
 import axios from "axios";
 import EntryForm from "./EntryForm";
+import toast from "react-hot-toast";
 
 function JadeedForm() {
   const inputFields = [
@@ -12,13 +13,24 @@ function JadeedForm() {
       required: true,
     },
     { heading: "Ayah", type: "number", name: "ayah", required: true },
+    { heading: "lines", type: "number", name: "lines", required: true },
     { heading: "Date", type: "date", name: "date", required: true },
   ];
   async function handleJadeedFormSubmit(data) {
-    console.log(data);
+    // console.log({...data,jwt:localStorage.getItem('jwt')});
     try{
-      const req = await axios.post('http://localhost:4000/entry/jadeed',data);
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_URL}/entry/jadeed`,
+        { ...data },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+          },
+        },
+      );
+      if(res.data.ok) return toast.success('jadeed updated');
     }catch(err){
+      console.log('something wrong')
       console.log(err)
     }
   }

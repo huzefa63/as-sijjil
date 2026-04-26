@@ -1,6 +1,9 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import AppNav from "./_components/AppNav";
+import ProtectRoutes from "./_components/ProtectRoutes";
+import { Toaster } from "react-hot-toast";
+import QueryProvider from "./_components/providers/QueryProvider";
 
 const poppins = Poppins({
   variable: "--poppins",
@@ -19,8 +22,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.className}  h-full antialiased`}>
       <body className="h-full flex flex-col text-sm bg-[#f0d8a1ab]">
-        <AppNav />
-        {children}
+        <QueryProvider>
+          <Toaster
+            toastOptions={{
+              style: { backgroundColor: "#FFF1D3", color: "#8a6b2f" },
+            }}
+          />
+          <ProtectRoutes />
+          <AppNav />
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
