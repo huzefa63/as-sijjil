@@ -56,8 +56,10 @@ export default JuzEntryTable
 function JuzEntryRow({page,index,date,juz,tambeeh,talqeen,marks}){
   return (
     <div className="grid grid-cols-7 px-3 py-2 border-b border-(--border)">
-      <p className="">{page * index}</p>
-      <p className="col-span-2 text-xs tracking-wider">{format(date,'MMM d, yyy')}</p>
+      <p>{(page - 1) * 10 + index + 1}</p>
+      <p className="col-span-2 text-xs tracking-wider">
+        {format(date, "MMM d, yyy")}
+      </p>
       <p className="text-center">{juz}</p>
       <p className="text-center">{tambeeh}</p>
       <p className="text-center">{talqeen}</p>
