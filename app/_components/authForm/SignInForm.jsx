@@ -19,27 +19,29 @@ function SignInForm() {
     }
     // setIsOtp({otp:'123456'});
   }
-  if(!isOtp) return <form className="flex flex-col gap-4" onSubmit={getOtp}>
-    <div>
-      <label className="mb-1 block text-sm font-medium text-gray-700">
-        Email
-      </label>
-      <input
-        onChange={(el) => setEmail(el.target.value)}
-        type="email"
-        placeholder="Enter your email"
-        className="w-full rounded-lg border px-4 py-2 outline-none focus:border-black"
-        required
-      />
-    </div>
+  if(!isOtp) return (
+    <form className="flex flex-col gap-4" onSubmit={getOtp}>
+      <div>
+        <label className=" mb-1 block text-sm font-medium text-gray-700">
+          Email
+        </label>
+        <input
+          onChange={(el) => setEmail(el.target.value)}
+          type="email"
+          placeholder="Enter your email"
+          className=" bg-(--background) shadow-sm focus:outline-none focus:border-amber-500 transition-all duration-500 ease-in-out border border-amber-300 rounded-sm px-2 py-2 w-full placeholder:text-amber-900 placeholder:text-xs"
+          required
+        />
+      </div>
 
-    <button
-      type="submit"
-      className="mt-4 rounded-lg bg-black py-2 text-white transition hover:bg-gray-800"
-    >
-      Continue
-    </button>
-  </form>;
+      <button
+        type="submit"
+        className="mt-5 bg-amber-800 hover:cursor-pointer hover:bg-amber-900 transition-all duration-300 ease-in-out shadow-sm text-white px-2 py-3 rounded-md text-xs tracking-wide "
+      >
+        Continue
+      </button>
+    </form>
+  );
   if(isOtp) return <OTP  email={email}/>;
 }
 
