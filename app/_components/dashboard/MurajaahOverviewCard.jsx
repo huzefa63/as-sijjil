@@ -43,8 +43,8 @@ function MurajaahOverviewCard() {
                 <p>marks</p>
               </div>
               <div className="space-y-3 px-2">
-                {murajaah.murajaah.map((el) => {
-                  return <MurajaahCard key={el._id} juzList={el?.entries} day={el.day}/>;
+                {murajaah.murajaah.map((el,i,arr) => {
+                  return <MurajaahCard key={el._id} renderBorder={i !== arr.length - 1} juzList={el?.entries} day={el.day}/>;
                 })}
               </div>
             </div>
@@ -63,9 +63,9 @@ function MurajaahOverviewCard() {
 export default MurajaahOverviewCard
 
 
-export function MurajaahCard({day,juzList}){
+export function MurajaahCard({day,juzList,renderBorder}){
   return (
-    <div className="grid grid-cols-5 border-b border-amber-700 pb-2">
+    <div className={`grid grid-cols-5 ${renderBorder && 'border-b'} border-amber-700 pb-2`}>
       <p className="mt-1 font-bold">{day}</p>
       {juzList?.map((el,i,arr) => {
         return (

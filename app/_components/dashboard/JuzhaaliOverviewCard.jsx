@@ -36,8 +36,8 @@ function JuzhaaliOverviewCard() {
           {/* <div className="bg-blue-500 w-fit mx-auto px-8 py-1 rounded-tl-full rounded-br-full">
                     <h1 className="text-white font-bold tracking-wider">Monday</h1>
                   </div> */}
-          {juzhaali?.juzhaali && (
-            <div className=" shadow-sm rounded-md rounded-br-none rounded-bl-none pb-1 space-y-4 mb-8 mt-6 border-b border-amber-700">
+          {juzhaali?.juzhaali.length > 0 && (
+            <div className=" shadow-sm rounded-md rounded-br-none rounded-bl-none pb-1 space-y-4 mb-8 mt-6">
               <div className="grid grid-cols-5 px-2 bg-blue-90 py-1 rounded-md border border-(--highlightBorder) bg-[#f0d8a1ab] shadow-sm">
                 <p className="text-left">day</p>
                 <p className="text-left">juz</p>
@@ -80,7 +80,7 @@ function JuzhaaliOverviewCard() {
             </div>
           )}
 
-          {!juzhaali?.juzhaali && (
+          {juzhaali?.juzhaali.length === 0 && (
             <div>
               <h1 className="font-bold text-center">
                 no juzhaali entry this week
