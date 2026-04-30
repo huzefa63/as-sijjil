@@ -80,7 +80,7 @@ export function MurajaahCard({day,juzList,renderBorder}){
               <p className="text-gray-600 text-xs flex justify-center items-center">
                 {el.talqeen}
               </p>
-              <p className="text-blue-500 font-bold flex justify-center items-center">
+              <p className="text-amber-900 font-bold flex justify-center items-center">
                 {el.marks}
               </p>
             </div>
